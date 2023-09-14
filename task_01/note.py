@@ -46,6 +46,7 @@ def start():
 
 
 def printAllRecords(notebook: list):
+    """Метод выводит на консоль все заметки."""
     for i in range(0, len(notebook), 4):
         print("id: " + notebook[i])
         print("Заголовок: " + notebook[i + 1])
@@ -57,6 +58,7 @@ def printAllRecords(notebook: list):
 
 
 def printRecordById(notebook: list, id: int):
+    """Метод выводит на консоль заметку по заданному id."""
     isFound = False
     for i in range(0, len(notebook), 4):
         if notebook[i] == str(id):
@@ -77,7 +79,7 @@ def printRecordById(notebook: list, id: int):
 
 
 def saveNotebook(path: str, notebook: list):
-    """Метод перезаписывает файл изменённым содержанием notebook"""
+    """Метод перезаписывает файл изменённым содержанием notebook."""
     stringToSave = ""
     for item in notebook:
         stringToSave += ";" + str(item)
@@ -87,7 +89,7 @@ def saveNotebook(path: str, notebook: list):
 
 
 def changeRecordById(notebook: list, id: int) -> list:
-    """Метод изменяет поля заметки"""
+    """Метод изменяет поля заметки."""
     isFound = False
     for i in range(0, len(notebook), 4):
         if notebook[i] == str(id):
@@ -115,7 +117,7 @@ def changeRecordById(notebook: list, id: int) -> list:
 
 
 def deleteRecordById(notebook: list, id: int) -> list:
-    """Метод удаляет заметку с заданным номером."""
+    """Метод удаляет заметку с заданным id."""
     isFound = False
     for i in range(0, len(notebook), 4):
         if notebook[i] == str(id):
@@ -135,7 +137,7 @@ def deleteRecordById(notebook: list, id: int) -> list:
 
 
 def getId() -> int:
-    """Метод возвращает номер заметки для удаления введённый пользователем"""
+    """Метод возвращает id введённый пользователем."""
     userInput = ""
     # result = -1
     userInput = input("\033[36m" + "Введите номер заметки: " + "\033[0m")
